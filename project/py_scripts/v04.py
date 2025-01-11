@@ -1,4 +1,3 @@
-import utime
 from machine import Pin, PWM
 from servo import Servo
 from machine import RTC
@@ -15,7 +14,7 @@ max_us = 2500
 dead_zone_us = 1500
 
 # create a servo object
-myServo = Servo(
+my_servo = Servo(
     pwm=servo_pwm, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
 )
 
@@ -34,19 +33,19 @@ while True:
     time_now = rtc.datetime()
 
     if machine_state == 1:
-        myServo.set_duty(state_1_state)
+        my_servo.set_duty(state_1_state)
         if time_now[6] - time_last_change[6] >= state_1_time:
             machine_state = 2
     elif machine_state == 2:
-        myServo.set_duty(state_2_state)
+        my_servo.set_duty(state_2_state)
         if time_now[6] - time_last_change[6] >= state_2_time:
             machine_state = 3
     elif machine_state == 3:
-        myServo.set_duty(state_3_state)
+        my_servo.set_duty(state_3_state)
         if time_now[6] - time_last_change[6] >= state_3_time:
             machine_state = 4
     elif machine_state == 4:
-        myServo.set_duty(state_4_state)
+        my_servo.set_duty(state_4_state)
         if time_now[6] - time_last_change[6] >= state_4_time:
             time_last_change = rtc.datetime()
             machine_state = 1

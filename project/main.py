@@ -1,5 +1,5 @@
 import sys
 
 sys.path.append("/lib")
-sys.path.append("/scripts")
-import v05  # Change this as you create more versions
+sys.path.append("/py_scripts")
+import v01  # Change this as you create more versions

@@ -15,7 +15,7 @@ max_us = 2500
 dead_zone_us = 1500
 
 # create a servo object
-myServo = Servo(
+my_servo = Servo(
     pwm=servo_pwm, min_us=min_us, max_us=max_us, dead_zone_us=dead_zone_us, freq=freq
 )
 
@@ -52,7 +52,7 @@ def smooth_change():
 
 
 while True:
-    myServo.set_duty(servo_value)
+    my_servo.set_duty(servo_value)
     if servo_value != new_servo_value:
         if not change_servo:
             time_last_change = utime.ticks_ms()
