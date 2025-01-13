@@ -49,6 +49,7 @@ def smooth_change():
         and utime.ticks_diff(utime.ticks_ms(), time_last_change) >= servo_smooth_time
     ):
         change_tick = 0
+    print(f"Servo value is now: {servo_value}")  # debugging only then remove
 
 
 while True:

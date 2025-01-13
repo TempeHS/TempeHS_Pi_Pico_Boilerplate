@@ -29,6 +29,7 @@ state_3_state = 1500
 state_4_time = 12
 state_4_state = 2000
 
+
 while True:
     time_now = rtc.datetime()
 
