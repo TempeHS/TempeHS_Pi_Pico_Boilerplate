@@ -1,6 +1,6 @@
 # Learn MicroPython Raspberry Pi Pico
 
-This repository is a template for mechatronics development using Pi Pico. The repository is pre-configured for VSCode and has a Pi Pico project rep-configured including servo library/examples and libraries for PiicoDev sensors. A folder of MicroPython firmware including brick recovery firmware are provided for easy access. A folder of basic PiicoDev sensor examples are provided with links to more examples.
+This repository is a template for mechatronics development using Pi Pico. The repository is pre-configured for VSCode and has a Pi Pico project rep-configured, including servo library/examples and libraries for PiicoDev sensors. A folder of MicroPython firmware, including brick recovery firmware, is provided for easy access. A folder of basic PiicoDev sensor examples is provided with links to more examples. The `main.py` has been preconfigured to be beginner friendly including debugging hints.
 
 ## Setup your Pi Pico and VSCode for development
 
@@ -9,7 +9,7 @@ This repository is a template for mechatronics development using Pi Pico. The re
 1. Disconnect Pi Pico
 2. Hold <kbd>Bootsel</kbd> button
 3. Connect Pi Pico to USB
-4. Side load the [correct firmware](_Firmware) to the RP1-RP2 drive that appears
+4. Sideload the [correct firmware](_Firmware) to the RP1-RP2 drive that appears
 5. <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> or <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
 6. Select **MicroPico: Connect**
 
@@ -20,23 +20,26 @@ This repository is a template for mechatronics development using Pi Pico. The re
 
 The Project folder is already configured and setup with the following features:
 
-1. All PiicoDev libraries are pre installed
-2. A custom Servo library is pre installed
+1. All PiicoDev libraries are pre-installed
+2. A custom Servo library is pre-installed
 3. You can add other libraries to the [project/lib](project/lib) folder
 4. You can create Python Scripts in the [project/py_script](project/py_script) folder and change the import parameter in [project/main.py](project/main.py) to run your script.
 5. Blink is loaded by default and several example versions of servo control have been added.
-6. V02-V05 demonstrates different ways to use the servo library including different approaches to state engines and servo smoothing.
+6. V02-V05 demonstrates different ways to use the servo library, including different approaches to state engines and servo smoothing.
+7. Change the `file_name` variable in main.py to select which file in py_scripts you want to run.
 
-Right click the EXPLORER window and choose _upload project to pico_ or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> or <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and select **MicroPico: Upload Project to Pico**.
+#### Steps to upload and run
+1. Right click the EXPLORER window and choose _upload project to pico_ or <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> or <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> and select **MicroPico: Upload Project to Pico**.
+2. If leaving Pico Pi connected to USB, you will need to manually run the `main.py` by right-clicking the `main.py` file in the EXPLORER window and choosing _Run current file on pico_.
 
 > [!Important]
 >
 > ## Reserved Pins
 >  |Pin|Use|Reason|
 > |---|---|---|
-> |GP0|TX|Reserved for communication and is often noisy|
-> |GP1|RX|Reserved for communication and is often noisy|
-> |GP4|Pull down input|Configured as a stop loop, ground the pin to stop the while True: loop|
+> |GP0|TX|Used by Pi Pico for Serial communication and is often noisy|
+> |GP1|RX|Used by Pi Pico for Serial communication and is often noisy|
+> |GP4|Pull down input|Configured in `main.py` as a stop loop, ground the pin to stop the while True: loop|
 > |GP11|I2C SDA|Used by PiicoDev for I2C communication|
 > |GP12|I2C SCL|Used by PiicoDev for I2C communication|
 
