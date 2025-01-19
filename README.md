@@ -32,12 +32,13 @@ Right click the EXPLORER window and choose _upload project to pico_ or <kbd>Ctrl
 > [!Important]
 >
 > ## Reserved Pins
->
-> GP0 - TX - Used for communication and is often noisy
-> GP1 - RX - Used for communication and is often noisy
-> GP4 - Ground pin to stop loop
-> GP11 - I2C SDA used by PiicoDev shield
-> GP12 - I2C SCL used by PiicoDev shield
+>  |Pin|Use|Reason|
+> |---|---|---|
+> |GP0|TX|Reserved for communication and is often noisy|
+> |GP1|RX|Reserved for communication and is often noisy|
+> |GP4|Pull down input|Configured as a stop loop, ground the pin to stop the while True: loop|
+> |GP11|I2C SDA|Used by PiicoDev for I2C communication|
+> |GP12|I2C SCL|Used by PiicoDev for I2C communication|
 
 ## PiicoDev Components Available at Tempe High School
 
