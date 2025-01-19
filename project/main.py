@@ -1,6 +1,10 @@
-### STUDENTS SHOULD ONLY EDIT THE FILE NAME IN LINE 24 ###
+#  STUDENTS SHOULD ONLY EDIT THE FILE NAME IN LINE 7
 import sys
 from machine import Pin
+
+
+# File name of the script to import
+file_name = "v01"
 
 # Add the path to the sys.path
 sys.path.append("/py_scripts")
@@ -19,7 +23,7 @@ stop_pin.irq(trigger=Pin.IRQ_FALLING, handler=callback)
 
 # Import the v01.py script and setup exception handling
 try:
-    import v01
+    exec(f"import {file_name}")
 except KeyboardInterrupt as e:
     print("KEYBOARD INTERRUPT")
     print("--- Traceback ---")
