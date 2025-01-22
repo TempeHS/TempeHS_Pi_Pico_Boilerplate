@@ -24,10 +24,8 @@ stop_pin.irq(trigger=Pin.IRQ_FALLING, handler=callback)
 # Import the v01.py script and setup exception handling
 try:
     __import__(file_name)
-except KeyboardInterrupt as e:
+except KeyboardInterrupt:
     print("KEYBOARD INTERRUPT")
-    print("--- Traceback ---")
-    sys.print_exception(e)
 except ImportError as e:
     print("IMPORT ERROR")
     print(
@@ -71,16 +69,6 @@ except ValueError as e:
     print(
         "Raised when a built-in operation or function receives an argument that has the right type but an inappropriate value."
     )
-    print("--- Traceback ---")
-    sys.print_exception(e)
-except FileExistsError as e:
-    print("FILE EXISTS ERROR")
-    print("Raised when trying to create a file or directory which already exists.")
-    print("--- Traceback ---")
-    sys.print_exception(e)
-except FileNotFoundError as e:
-    print("FILE NOT FOUND ERROR")
-    print("Raised when a file or directory is requested but doesn`t exist.")
     print("--- Traceback ---")
     sys.print_exception(e)
 except OSError as e:
